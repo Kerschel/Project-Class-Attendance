@@ -1,0 +1,1 @@
+You should not run this code since the database has the timetable data in it already

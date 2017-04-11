@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+
+    android:focusable="true" android:focusableInTouchMode="true">
+
+    <!--<LinearLayout-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:weightSum="1">-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="TextView"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="67dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/textView4"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_weight="0.60" />&ndash;&gt;-->
+    <!--</LinearLayout>-->
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+
+        <EditText
+            android:id="@+id/txtsearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search"
+            android:layout_below="@+id/txtsearches"
+            android:gravity="center_vertical|center_horizontal" />
+
+
+
+        <!--<Button-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:text="Next"-->
+            <!--android:onClick="onClick"-->
+            <!--android:elevation="21dp"-->
+            <!--android:layout_weight="0.14"-->
+
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:id="@+id/nextPage" />-->
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtsearch"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:headerDividersEnabled="true"
+            android:footerDividersEnabled="true"
+            android:theme="@style/Base.Animation.AppCompat.DropDownUp">
+
+        </ListView>
+
+        <TextView
+            android:id="@+id/txtsearches"
+            android:layout_width="fill_parent"
+            android:layout_height="150px"
+            android:hint="Class Attendance"
+            android:textColorHint="#FFFF"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorPrimary"
+            android:textAlignment="textStart"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="11dp"
+            android:id="@+id/backCourse"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+        android:background="@drawable/back"
+        android:layout_marginEnd="12dp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1 class="text-center title">Login</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="wrap-login col-md-4 col-md-offset-4">
+            <form name="signUpForm" novalidate>
+                <div class="form-group label-floating" ng-class="{ 'has-success' : signUpForm.email.$valid}">
+                    <label class="control-label">Email</label>
+                    <input type="email" class="form-control" id="email" ng-model="email" placeholder="Enter Email Address" name="email" required>
+                     <span class="form-control-feedback"><i class="material-icons">done</i></span>
+                    <p class="error-msg" ng-if="!signUpForm.email.$valid && !signUpForm.email.$pristine">valid email is required</p>
+                </div>
+                <div class="form-group label-floating" ng-class=" {'has-success': signUpForm.password.$valid}">
+                    <label class="control-label">Password</label>
+                    <input type="password" class="form-control" id="password" ng-model="password" placeholder="Enter Password" ng-minlength="6" required>
+                    <span class="form-control-feedback"><i class="material-icons">done</i></span>
+                    <p class="error-msg" ng-if="signUpForm.password.$error.minlength">Password must be at least 6 characters</p> 
+                </div>
+                <button type="submit" class="btn-login btn btn-primary" ng-disabled="signUpForm.$invalid" ng-click="login()">Log In</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <p class="text-center myParagraph">
+                <a href="/#!/signup">Don't have an Account? Click here</a>
+            </p>
+        </div>
+    </div>
+</div>

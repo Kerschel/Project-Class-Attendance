@@ -1,0 +1,59 @@
+$scope.course = [];
+	var classLists = [];
+	var classAttendanceData = [];//This array will be parallel to the $scope.classData array. It will be used to hold the average attendance for each class.
+	var d = new Date();
+	$scope.classData = [];
+	var list;
+	//The map variable is an associative array that will provide between course codes and their respective class times. Each key will represent a course code while the corresponding value will represent an index in the class Data array that will hold corresponding class times.
+	$scope.map = {};
+	//The class data array is a two dimentional array where each index holds data for classes of a particular course. A single course may have multiple classes which gives reason for the array being two dimentional.	$scope.classData = [];
+	var currentPosition;
+	var classRef = firebase.database().ref('class');
+	var listRef = firebase.database().ref('Students');
+	var attendanceRef = firebase.database().ref(d.getFullYear());
+	classRef.on('value', function(classSnapshot){//Snapshot for all class times.
+		var position = 0;
+		classSnapshot.forEach(function(childSnapshot){//This snapshot holds data for each individual class time. 
+			current = childSnapshot.val().courseCode;//the current will represent the course code of the current class. 
+			if($scope.map[current] == null){//If we have not already encountered the course that was retrieved, we create a key value pair in map array and add this data on the class to the class data array.
+				$scope.map[current] = position;//create a key value pair.
+				$scope.classData[position] = [];
+				listRef.child(current).once('value', function(snapshot){
+					classLists[this.position] = snapshot.numChildren();
+				}.bind({position: position}));//You can pass data into promises including a firebase callback using the bind statement.
+				$scope.classData[position].push(childSnapshot.val());
+				position++;
+			}
+			else{
+				currentPosition = $scope.map[current];
+				$scope.classData[currentPosition].push(childSnapshot.val());
+			}
+		});
+		$scope.$apply();
+		//console.log($scope.classData);
+		//console.log($scope.map);
+		//console.log(classLists);
+		attendanceRef.once('value').then(function(snapshot){
+			snapshot.forEach(function(childSnapshot){
+				console.log(childSnapshot.key);
+				childSnapshot.forEach(function(monthSnapshot){
+					console.log(monthSnapshot.key);
+					monthSnapshot.forEach(function(daysnaphot){
+						console.log(daysnaphot.key);
+						var myDate = new Date()
+						var dateString = monthSnapshot.key + ' ' + daysnaphot.key + ', ' + d.getFullYear();
+						var classListPosition = $scope.map[childSnapshot.key];
+						var courseData = $scope.classData[classListPosition];
+						myDate = new Date(dateString);
+						currentDay = myDate.getDate();
+						for(var i = 0; i < courseData.length; i++){
+							if(courseData.dayOfWeek.localeCompare(DAYS_OF_WEEK[currentDay])){
+								classAttendanceData[classListPosition][i]
+							}
+						}
+						console.log(classLists[classListPosition] + ' ' + daysnaphot.numChildren());
+					})
+				})
+			})
+		})
+	});

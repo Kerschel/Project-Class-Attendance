@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "194623765186",
+    "firebase_url": "https://classattend.firebaseio.com",
+    "project_id": "classattend",
+    "storage_bucket": "classattend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194623765186:android:ea0da7f606beba63",
+        "android_client_info": {
+          "package_name": "com.example.kerschel.classattend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194623765186-9venua95rd7cqs66o19nmlevc0aaem3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_4D7aSJTcHHIANlyACGUxwgEe8fQnMFA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

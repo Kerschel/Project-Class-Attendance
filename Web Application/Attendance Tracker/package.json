@@ -1,0 +1,28 @@
+{
+  "name": "attendancetracker",
+  "version": "1.0.0",
+  "description": "Attendance Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rondell",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-bootstrap-fileinput": "^1.0.0",
+    "angular-chart.js": "^1.1.1",
+    "angular-csv-import": "0.0.27",
+    "angular-filter": "^0.5.15",
+    "angular-route": "^1.6.2",
+    "angular-sweetalert": "^1.1.2",
+    "angularfire": "^2.3.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-fileinput": "^4.3.8",
+    "fast-csv": "^2.4.0",
+    "firebase": "^3.7.0",
+    "jquery": "^3.1.1",
+    "ngsweetalert": "^1.0.1",
+    "sweetalert": "^1.1.3"
+  }
+}

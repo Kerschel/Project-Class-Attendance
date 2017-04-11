@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="col-md-6">
+		<form>
+			<div class="form-group">
+				<label>Enter Student ID</label>
+				<input type="text" ng-model="studentNumber" class="form-control" name="list" uib-typeahead="student for student in studentList | filter:$viewValue | limitTo:8" autocomplete="off"/>
+			</div>
+			<div class="form-group">
+				<label>Select a Course</label>
+				<input type="text" ng-model="selectedCourse" class="form-control" name="courseList" uib-typeahead="course for course in courses | filter:$viewValue | limitTo:8" autocomplete="off"/>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-5">
+					<input class="form-control" type="date" ng-model="startDate"/>
+				</div>
+				<div class="col-md-5">
+					<input class="form-control" type="date" ng-model="endDate"/>
+				</div>
+			</div>
+			<input class="btn btn-primary" type="submit" value="Generate Graph" ng-click="generateGraph()"/>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<canvas id="doughnut" ng-if="showGraph" class="chart chart-doughnut" chart-data="graphData" chart-labels="labels" chart-colors="graphColors" chart-options="options"></canvas>
+	</div>
+</div>

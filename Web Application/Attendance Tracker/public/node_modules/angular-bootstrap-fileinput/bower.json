@@ -1,0 +1,29 @@
+{
+  "name": "angular-bootstrap-fileinput",
+  "main": "angular-bootstrap-fileinput.js",
+  "authors": [
+    "Gerald Humphries <geraldhumphries@gmail.com>"
+  ],
+  "description": "A simple Angular directive wrapper for bootstrap-fileinput",
+  "moduleType": [],
+  "keywords": [
+    "bootstrap",
+    "angular",
+    "angularjs",
+    "file",
+    "upload",
+    "input"
+  ],
+  "dependencies": {
+    "bootstrap-fileinput": "^4.0.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/geraldhumphries/angular-bootstrap-fileinput",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
